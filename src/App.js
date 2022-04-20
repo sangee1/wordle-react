@@ -23,10 +23,10 @@ function App() {
 
   useEffect(() => {
     generateWordSet().then((words) => {
-      console.log(words.todaysWord);
+      //console.log(words.todaysWord);
       setWordSet(words.wordSet);
       setCorrectWord(words.todaysWord);
-      console.log(correctWord);
+      //console.log(correctWord);
     });
   }, []);
 
@@ -60,8 +60,8 @@ function App() {
     } else {
       alert("Word not found");
     }
-
-    if (currWord === correctWord) {
+    //console.log("correct word is ", correctWord);
+    if (currWord.toLowerCase() === correctWord) {
       setGameOver({ gameOver: true, guessedWord: true });
       return;
     }
